@@ -23,14 +23,14 @@ This project demonstrates how to scrape dynamic content from a website using **P
 
   Clone the repo and  Install dependencies
 
-    ```
-      git clone 
+    
+      git clone https://github.com/Hemanthbugata/web-scraper.git
 
       cd node-scraper
 
       npm install 
 
-      node scraper.js 
+      node scraper.js  (scraped data is stored in data.json)
 
       .env ( include the website URL for web scrapping) 
             SCRAPE_URL = " " 
@@ -41,6 +41,15 @@ This project demonstrates how to scrape dynamic content from a website using **P
 
       pip install requriements.txt
 
-      python server.py 
+      python server.py (displays the data stored in data.json on localhost)
 
-    ```
+Now in Root dir 
+
+ After Dockerfile is coded. 
+
+    docker build -t web-scraper . 
+
+    docker run -p 5000:5000 web-scraper (runs on a docker container) 
+    
+
+  
