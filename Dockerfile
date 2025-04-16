@@ -1,22 +1,23 @@
+# Node.js dockerfile
+
 FROM node:18 AS base
 
-# Install Chromium dependencies
 RUN apt-get update && apt-get install -y chromium && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-# Set working directory
+
 WORKDIR /app
 
-# Node.js setup
 COPY node-scraper/package.json ./node-scraper/
 WORKDIR /app/node-scraper
 RUN npm install
 COPY node-scraper/ ./
 RUN node scraper.js
 
-# Python setup
+# Python dockerfile
+
 FROM python:3.10-slim
 
 WORKDIR /app
