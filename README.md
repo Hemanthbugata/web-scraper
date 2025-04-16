@@ -50,6 +50,11 @@ Now in Root dir
     docker build -t web-scraper . 
 
     docker run -p 5000:5000 web-scraper (runs on a docker container) 
-    
+
+
+ **OUTPUT**
+
+  ![image](https://github.com/user-attachments/assets/445c13fa-8adb-4568-8af3-7580330359d2)
+
 
   
